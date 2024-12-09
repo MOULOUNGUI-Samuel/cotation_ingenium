@@ -7,13 +7,21 @@ use App\Http\Requests\Auth\LoginRequestUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
     
     //
     public function Connexion(LoginRequestUser $request){
         
+        // User::create([
+        //     'name' => 'Admin User',
+        //     'email' => 'admin@example.com',
+        //     'password' => Hash::make('password123'), // Utilisez un mot de passe sécurisé
+        //     'client_id' => null, // Aucun client associé pour cet utilisateur
+        //     'role' => 'admin', // Rôle administrateur
+        // ]);
+
         $credentials = $request->validated();
         // Tenter de connecter l'utilisateur avec les informations fournies
         if (Auth::attempt($credentials)) {

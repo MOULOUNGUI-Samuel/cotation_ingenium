@@ -21,14 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-<<<<<<< HEAD
-    ];
-=======
         'client_id', // ID du client associé
         'role',      // Rôle de l'utilisateur
     ];
     
->>>>>>> 149ce15 (revu du travail)
 
     /**
      * The attributes that should be hidden for serialization.
@@ -49,13 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-<<<<<<< HEAD
-=======
 
      // Relation avec le modèle Client
      public function client()
      {
          return $this->belongsTo(Client::class, 'client_id');
      }
->>>>>>> 149ce15 (revu du travail)
 }
